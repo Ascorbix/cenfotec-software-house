@@ -1,0 +1,27 @@
+{
+  "name": "cenfotec-software-house",
+  "version": "0.0.1",
+  "description": "Plataforma de Cenfotec Software House",
+  "main": "public/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ascorbix",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.7",
+    "angular": "^1.6.9",
+    "angular-css": "^1.0.8",
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "oclazyload": "^1.1.0",
+    "popper.js": "^1.12.9",
+    "sweetalert": "^2.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.2.0",
+    "gulp-nodemon": "^2.2.1"
+  }
+}
