@@ -8,9 +8,9 @@
 (sudo) npm install -g gulp gulp-cli nodemon
 
 ## install dependencies (in your proyect folder)
-npm install && bower install
+npm install
 
 
 ## run it (in your proyect folder)
-gulp serve
+gulp
 ```
