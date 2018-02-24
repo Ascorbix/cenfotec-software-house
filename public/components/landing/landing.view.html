@@ -1,76 +1,25 @@
-<div ng-include="'./components/includes/_header.html'"></div>
-<main>
-  <section class="col-md-12" id="banner">
-      <div class="col-sm-8 offset-2 text-center">
+<hearder-Principal></hearder-Principal>
+
+<main id="landingPage">
+  <section class="col-12" id="banner">
+      <div class="col-8 mx-auto text-center">
         <h2 class="text-white">Cenfotec Software House</h2>
         <p class="font-weight-light text-white pt-2">Su casa para recibir servicios profesionales en tecnologías de información, de gran calidad, diseñados y construidos por estudiantes y profesores de la <span class="font-weight-bold">Universidad Cenfotec</span> para la comunidad.</p>
         <a class="btn btn-warning" href="#!/projectRequest">Enviar solicitud de proyecto</a>
       </div>
   </section>
 
-  <!-- Services -->
-  <section id="services">
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle"></i>
-            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle"></i>
-            <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle"></i>
-            <i class="fa fa-briefcase fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ubicacion">
-
-    <div class="row">
-      <div class="col-lg-12 text-center mt-4 mb-3">
-        <h2 class="section-heading">Ubicación</h2>
-      </div>
-    </div>
-
-    <div class="container-fluid px-0">
-      <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1965.0058695363427!2d-84.03107!3d9.932979860539223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1suniversidad+cenfotec!5e0!3m2!1ses!2s!4v1396040769596" width="100%" height="500" frameborder="0"></iframe>
-    </div>
-  </section>
-
-
-  <section id="nosotros">
-
+  <!-- nosotros -->
+  <!-- <section id="nosotros">
       <div class="container">
-        <div class="col-md-2 offset-5 text-center">
+        <div class="col-md-2 text-center">
           <h2>Nosotros</h2>
         </div>
       </div>
 
       <div class="container">
 
-        <div class="row">
+        <div>
           <div class="col-md-6 font-weight-light" id="description">
             <p>El Cenfotec Software House es un proyecto de emprendimiento académico y profesional dentro de la Universidad Cenfotec, donde los estudiantes de la Universidad brindan servicios a la comunidad, asesorados por profesores expertos en diferentes áreas, con precios muy asequibles.</p>
             <p>Los estudiantes que participan del Cenfotec Software House, son estudiantes que han demostrado un nivel de excelencia mayor, que cuentan con altas habilidades tanto técnicas como blandas y con el deseo de ser parte del equipo.</p>
@@ -79,11 +28,77 @@
           </div>
 
           <div id="cenfo" class="col-md-6">
-            <img src="./sources/img/back01.jpg" alt="" width="100%">
+            <img src="./sources/img/back01.jpg" alt="" width="20%">
           </div>
         </div>
 
       </div>
+  </section> -->
 
+  <!-- Servicios -->
+  <section id="services" class="mt-5">
+    <div class="container mt-5">
+      <div class="row mt-5">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Servicios</h2>
+          <p class="section-subheading text-muted mt-3">Dentro de los servicios que ofrece el Cenfotec Software House, se encuentran:</p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <div class="circuloPadre">
+              <i class="fas fa-circle"></i>
+            </div>
 
+            <div>
+              <i class="fas fa-code fa-stack-1x fa-inverse"></i>
+            </div>
+
+          </span>
+          <h4 class="service-heading">Diseño y desarrollo web</h4>
+          <p class="text-muted font-weight-light">Diseño, prototipado, y diseño de interfaces trabajadas con las tecnologías actuales, acorde a sus necesidades de alicaciones web mantenibles</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <div class="circuloPadre">
+              <i class="fas fa-circle"></i>
+            </div>
+            <div>
+              <i class="fas fa-briefcase fa-stack-1x fa-inverse"></i>
+            </div>
+          </span>
+          <h4 class="service-heading">Apoyo en proyectos de emprendimiento</h4>
+          <p class="text-muted font-weight-light">Apoyo en proyectos de emprendimiento con nuestro aliado, el Programa Semilla.</p>
+        </div>
+        <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <div class="circuloPadre">
+                <i class="fas fa-circle"></i>
+              </div>
+
+              <div>
+                <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+              </div>
+            </span>
+            <h4 class="service-heading">Desarrollo de aplicaciones</h4>
+            <p class="text-muted font-weight-light">Desarrollo de aplicaciones con pruebas de calidad de software acordes a sus necesidades con la mayor mantenibilidad</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" class="mt-5">
+    <div>
+      <div class="col-lg-12 text-center pt-5 mb-4">
+        <h2 class="section-heading ">Ubicación</h2>
+      </div>
+    </div>
+
+    <div class="container-fluid px-0">
+      <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1965.0058695363427!2d-84.03107!3d9.932979860539223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1suniversidad+cenfotec!5e0!3m2!1ses!2s!4v1396040769596" width="100%" height="500" frameborder="0"></iframe>
+    </div>
+  </section>
 </main>
+<div ng-include="'./components/includes/_footer.html'"></div>

@@ -11,17 +11,21 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.7",
     "angular": "^1.6.9",
-    "angular-css": "^1.0.8",
+    "angular-ui-router-css": "0.0.0",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "oclazyload": "^1.1.0",
     "popper.js": "^1.12.9",
-    "sweetalert": "^2.1.0"
+    "sweetalert": "^2.1.0",
+    "ui-router-page-title": "^1.0.4"
   },
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.2.0",
-    "gulp-nodemon": "^2.2.1"
+    "gulp-cssnano": "^2.1.2",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0"
   }
 }

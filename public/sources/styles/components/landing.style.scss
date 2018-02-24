@@ -1,26 +1,30 @@
-/* Primera seccion */
+#landingPage{
+  // Primera Seccion
   #banner{
     background-image: url('./../../sources/img/banner.jpg');
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
+    background-repeat: no-repeat;
     background-size: 100%;
-  }
-    #banner div{
+
+    div{
       padding-bottom: 17%;
     }
-    #banner h2{
+
+    h2{
       margin: 0;
-      font-size: 4.2em;
       padding-top: 29%;
     }
-/*estilos del segundo section*/
+  }
+  // Segunda seccion
   #nosotros{
     background: #fff;
-  }
-    #nosotros h2{
+
+    h2{
       color: #000;
       margin: 30% 0 36%;
     }
+
     #description{
       width: 50%;
       color: #000;
@@ -32,9 +36,16 @@
     #cenfo{
       position: relative;
       z-index: 1;
-    }
-      #cenfo img{
+
+      img{
         margin-top: 15%;
         border-radius: 2%;
         position: absolute;
       }
+    }
+  }
+  .circuloPadre{
+    font-size:1.4em;
+    color:#fec108
+  }
+}

@@ -1,4 +1,14 @@
-# proyecto-web-Cenfotec
+# Plataforma de Cenfotec Software House
+
+## Creditos del equipo de Ascorbix
+(En orden alfabético)
+[Kevin Aguilar](//github.com/KaguilarA)
+[Pabs Monestel](//github.com/pabskun)
+[Olman Santamaría](//github.com/osantamariaacosta)
+
+## Standar utilizado
+
+*Estandar de AngularJS propuesto por [@john_papa](//twitter.com/john_papa)*
 
 
 ## Setup
