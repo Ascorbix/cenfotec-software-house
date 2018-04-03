@@ -5,13 +5,14 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       cssnano = require('gulp-cssnano'),
       nodemon = require('gulp-nodemon'),
+      rename = require('gulp-rename'),
       browserSync = require('browser-sync').create(),
       paths = {
         views : './public/components/**/**/**/**/*.html',
         styles : './public/sources/styles/style.scss',
         js : './public/components/**/**/**/**/*.js',
         excss: './public/*.css'
-      }
+      };
 
 gulp.task('connect', () => {
   connect.server({
@@ -60,8 +61,9 @@ gulp.task('styles', () => {
   gulp.src(paths.styles)
   .pipe(sass().on('error', sass.logError))
   .pipe(cssnano())
-  .pipe(gulp.dest('./public'))
-})
+  .pipe(rename('styles.min.css'))
+  .pipe(gulp.dest('./public/sources'));
+});
 
 gulp.task('watch', () => {
   gulp.watch([paths.views, paths.js, paths.styles], ['reload', 'styles'])

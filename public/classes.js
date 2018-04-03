@@ -76,6 +76,10 @@ class User {
     return this.photo;
   }
 
+  getId(){
+    return this.id;
+  }
+
   setPhoto(pnphoto){
     this.photo = pnphoto;
   }
@@ -110,6 +114,10 @@ class Student extends User{
     this.carrer = pcarrer;
     this.githubUser = pgithubuser;
   };
+
+  getBirthDate(){
+    return `${this.birthDate.getDay()} 'de' ${this.birthDate.getMonth()}`;
+  }
 }
 
 

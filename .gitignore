@@ -2,6 +2,7 @@ node_modules
 
 public/lib
 
-public/style.css
+public/sources/styles.min.css
 
 .env
+*.DS_Store

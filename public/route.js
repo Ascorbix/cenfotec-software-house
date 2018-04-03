@@ -76,7 +76,7 @@
     })
 
     if(status == '404'){
-      $state.transitionTo('/404');
+      $state.transitionTo('404notfoud');
     }
 
     $urlRouterProvider.otherwise('/');
