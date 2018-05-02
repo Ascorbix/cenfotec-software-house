@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="csh-app">
+<html lang="es" ng-app="cenfotec-software-house">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="El Cenfotec Software House nace como complemento de formación que permita a los estudiantes vivir experiencias de trabajo reales, y con un cliente final, alineado con la metodología de proyectos característica de la Universidad Cenfotec, y para dar atención a las múltiples solicites del desarrollo de proyectos TICs.">
-  <meta name="author" content="Ascrobix">
-  <link rel="icon" href="./sources/img/cshLogo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Ascorbix">
+  <meta name="description" content="El Cenfotec Software House nace como complemento de formación que permita a los estudiantes vivir experiencias de trabajo reales, y con un cliente final, alineado con la metodología de proyectos característica de la Universidad Cenfotec, y para dar atención a las múltiples solicites del desarrollo de proyectos TICs">
   <title page-title></title>
+  <link rel="shortcut icon" href="./sources/img/cshLogo.png" type="image/x-icon">
+  <link rel="stylesheet" href="./sources/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
   <link rel="stylesheet" href="./sources/styles.min.css">
 </head>
-<body>
-
+<body class="font-weight-light">
   <div ui-view></div>
 
-  <!-- Script dependencies -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="./lib/bootstrap/jquery.min.js"></script>
-    <script src="./lib/bootstrap/popper.min.js"></script>
-    <script src="./lib/bootstrap/bootstrap.min.js"></script>
-    <script src="./lib/sweetalert/sweetalert.min.js"></script>
-
-  <!-- AngularJS and dependencies Scripts -->
-    <script src="./lib/angular/angular.min.js"></script>
-    <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
-    <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
-    <script src="./lib/angular/routing/page-title.min.js"></script>
-
-  <!-- Aplication Scripts -->
-    <script src="./classes.js"></script>
-    <script src="./app.js"></script>
-    <script src="./route.js"></script>
-
-  <!-- Aplication Service -->
-    <script src="./components/services/user.service.js"></script>
-    <script src="./components/services/project.service.js"></script>
-    <script src="./components/services/carrers.service.js"></script>
-
-  <!-- Directivas -->
-    <script src="./components/directives/header/header.directive.js"></script>
+   <!-- Dependencias -->
+   <script src="./lib/bootstrap/jquery.min.js"></script>
+   <script src="./lib/bootstrap/popper.min.js"></script>
+   <script src="./lib/bootstrap/bootstrap.min.js"></script>
+   <script src="./lib/sweetalert/sweetalert.min.js"></script>
+   <!-- Script de Angular -->
+   <script src="./lib/angular/angular.min.js"></script>
+     <!-- Dependencias de Agular -->
+     <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
+     <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+     <script src="./lib/angular/routing/page-title.min.js"></script>
+     <script src="./lib/angular/dependencies/angular-messages.min.js"></script>
+     <script src="./lib/angular/dependencies/angular-scroll.min.js"></script>
+     <script src="./lib/angular/dependencies/ng-file-upload.min.js"></script>
+     <script src="./lib/angular/dependencies/ng-file-upload-shim.min.js"></script>
+     <script src="./lib/angular/dependencies/angular-animate.min.js"></script>
+   <!-- Script de la aplicación -->
+   <script src="./classes.js"></script>
+   <script src="./app.js"></script>
+   <script src="./route.js"></script>
+   <!-- Directives -->
+  <script src="./components/directives/header/header.directive.js"></script>
+</body>
 </html>

@@ -1,83 +1,42 @@
 (() => {
-  'use strict';
+  'use strict'
   angular
-  .module('cshRoutes', ['ui.router', 'oc.lazyLoad', 'uiRouterTitle'])
-  .config(appRoutes);
+    .module('appRoutes', ['ui.router', 'oc.lazyLoad', 'uiRouterTitle'])
+    .config(routing);
 
-  appRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
+  routing.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function appRoutes($stateProvider,$urlRouterProvider,$ocLazyLoad){
+  function routing($stateProvider, $urlRouterProvider, $oclazyLoad) {
     $stateProvider
+      .state('landingPage', {
+        url: '/',
+        templateUrl: './components/landingPage/landingPage.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/landingPage/landingPage.controller.js');
+          }]
+        },
+        controller: 'landingPageController',
+        controllerAs: 'vm'
+      })
 
-    .state('landingPage', {
-      url: '/',
-      templateUrl: './components/landing/landing.view.html',
-      css: './components/landing/landing.style.css',
-      data:{
-        pageTitle: 'Cenfotec Software House'
-      }
-    })
-
-    .state('404notfoud', {
-      url: '/404',
-      templateUrl: './components/notfound/notfound.view.html',
-      css: './components/notfound/notfound.style.css',
-      data:{
-        pageTitle: 'Contenido no encontrado'
-      }
-    })
-
-    .state('login', {
-      url: '/login',
-      templateUrl: './components/login/login.view.html',
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/login/login.controller.js')
-        }]
-      },
-      data:{
-        pageTitle: 'Inicio de sesion'
-      },
-      controller: 'loginController',
-		  controllerAs: 'vm',
-      css: './components/login/login.style.css'
-    })
-
-    .state('studentsRequest', {
-      url: '/studentsRequest',
-      templateUrl: './components/users/studentsRequest/studentRequest.view.html',
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/users/studentsRequest/studentRequest.controller.js')
-        }]
-      },
-      data:{
-        pageTitle: 'Solicitud de registro de estudiantes'
-      },
-      controller: 'studentRequestController',
-		  controllerAs: 'vm',
-      css: './components/users/studentsRequest/studentRequest.css'
-    })
-
-    .state('projectRequest', {
-      url: '/projectRequest',
-      templateUrl: './components/projects/projectRequest/projectRequest.view.html',
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/projects/projectRequest/projectRequest.controller.js')
-        }]
-      },
-      data:{
-        pageTitle: 'Solicitud de proyecto'
-      },
-      controller: 'projectRequestController',
-		  controllerAs: 'vm',
-      css: './components/projects/projectRequest/projectRequest.style.css'
-    })
-
-    if(status == '404'){
-      $state.transitionTo('404notfoud');
-    }
+      .state('iniciarSesion', {
+        url: '/logIn',
+        templateUrl: './components/logIn/logIn.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Iniciar Sesión'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/logIn/logIn.controller.js');
+          }]
+        },
+        controller: 'logInController',
+        controllerAs: 'vm'
+      })
 
     $urlRouterProvider.otherwise('/');
   }

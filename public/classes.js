@@ -1,13 +1,45 @@
 class Carrer{
-  constructor(pcarrername, pcarrercode, pcarrerdegree){
+  constructor(pcarrername, pcarrercode, pcarrerdegree, pcarrerstate){
     this.carrerName = pcarrername;
     this.carrerCode = pcarrercode;
     this.carrerDegree = pcarrerdegree;
+    this.carrerState = pcarrerstate;
+  }
+  
+  // Getter
+  getCarrerName(){
+    return this.carrerName;
+  }
+
+  getCarrerCode(){
+    return this.carrerCode
+  }
+
+  getCarrerDegree(){
+    return this.carrerDegree;
+  }
+
+  getCarrerState(){
+    return this.carrerState;
+  }
+
+  // Setter
+  setCarrerName(pnewcarrername){
+    this.carrerName = pnewcarrername;
+  }
+
+  setCarrerDegree(pnewcarrerdegree){
+    this.carrerDegree = pnewcarrerdegree;
+  }
+
+  setCarrerState(pnewcarrerstate){
+    this.carrerState = pnewcarrerstate;
   }
 }
 
 class Project {
-  constructor(pprojectstate, pprojectname, pobjetive, pimages, pmoney, pprojectmanager, pclient){
+  constructor(pid, pprojectstate, pprojectname, pobjetive, pimages, pmoney, pprojectmanager, pclient){
+    this._id = pid;
     this.projectState = pprojectstate;
     this.projectName = pprojectname;
     this.projectObjetive = pobjetive;
@@ -26,6 +58,7 @@ class Project {
   setStudents(pobjstudent){
     this.students.push(pobjstudent);
   }
+  // TODO Hacer los metodos del Proyecto
 }
 
 class ProjectManager {
@@ -36,6 +69,7 @@ class ProjectManager {
     this.pmSecondSurname = psecondsurname;
     this.pmEmail = pemail;
   }
+  // TODO Hacer los metodos del PM
 }
 
 class Client {
@@ -44,6 +78,7 @@ class Client {
     this.enterpriseId = penterpriseid;
     this.enterpriseIndustry = penterpriseidustry;
   };
+  // TODO Hacer los metodos del Cliente
 }
 
 class User {
@@ -60,16 +95,14 @@ class User {
     this.phone = pphone;
   };
 
+  // TODO Terminar los metodos de la clase Padre
+
   getEmail(){
     return this.email;
   }
 
   getPassword(){
     return this.password;
-  }
-
-  getFullName(){
-    return `${this.firstName} ${this.secondName} ${this.firstSurname} ${this.secondSurname}`;
   }
 
   getPhono(){
@@ -90,6 +123,8 @@ class Admin extends User{
     super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
     this.job = pjob;
   };
+
+  // TODO Hacer los metodos del Administrado
 }
 
 class Assistant extends User{
@@ -97,6 +132,7 @@ class Assistant extends User{
     super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
     this.job = pjob;
   };
+  // TODO Hacer los metodos del Asistente
 }
 
 class Professor extends User{
@@ -104,6 +140,7 @@ class Professor extends User{
     super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
     this.member = pmember;
   };
+  // TODO Hacer los metodos del Profesor
 }
 
 class Student extends User{
@@ -114,10 +151,7 @@ class Student extends User{
     this.carrer = pcarrer;
     this.githubUser = pgithubuser;
   };
-
-  getBirthDate(){
-    return `${this.birthDate.getDay()} 'de' ${this.birthDate.getMonth()}`;
-  }
+  // TODO Hacer los metodos del Estudiante
 }
 
 

@@ -1,16 +1,20 @@
-'use strict';
+'use strict'
 
 const gulp = require('gulp'),
       connect = require('gulp-connect'),
       sass = require('gulp-sass'),
       cssnano = require('gulp-cssnano'),
-      nodemon = require('gulp-nodemon'),
       rename = require('gulp-rename'),
-      browserSync = require('browser-sync').create(),
+      nodemon = require('gulp-nodemon'),
+      todo = require('gulp-todo'),
+      browserSync = require('browser-sync'),
       paths = {
-        views : './public/components/**/**/**/**/*.html',
-        styles : './public/sources/styles/style.scss',
-        js : './public/components/**/**/**/**/*.js',
+        views : './public/components/**/**/*.html',
+        styles: './public/sources/styles/**/*.scss',
+        impSass : './public/sources/styles/styles.scss',
+        principalJs : './public/*.js',
+        js: './public/components/**/**/*.js',
+        jsBackEnd: './api/**/**/**/*.js',
         excss: './public/*.css'
       };
 
@@ -23,42 +27,65 @@ gulp.task('connect', () => {
   browserSync.init({
     server: './public'
   });
+  nodemon();
 });
+
+gulp.task('to-do', (cb) => {
+  gulp.src([paths.js, paths.jsBackEnd, paths.principalJs])
+  .pipe(todo({
+    verbose: true
+  }))
+  .pipe(gulp.dest('./'))
+  .on('end', cb);
+});
+
 
 gulp.task('dependencies', () => {
   gulp.src([
-    './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/popper.min.js'
+    './node_modules/angular/angular.min.js',
   ])
-  .pipe(gulp.dest('./public/lib/bootstrap'));
+    .pipe(gulp.dest('./public/lib/angular'));
 
   gulp.src([
-    './node_modules/sweetalert/dist/sweetalert.min.js',
+    './node_modules/angular-messages/angular-messages.min.js',
+    './node_modules/angular-password/angular-password.min.js',
+    './node_modules/angular-scroll/angular-scroll.min.js',
+    './node_modules/ng-file-upload/dist/ng-file-upload.min.js',
+    './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
+    './node_modules/ngmap/build/scripts/ng-map.min.js',
+    './node_modules/angular-animate/angular-animate.min.js'
   ])
-  .pipe(gulp.dest('./public/lib/sweetalert'))
+    .pipe(gulp.dest('./public/lib/angular/dependencies'));
 
   gulp.src([
     './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
     './node_modules/oclazyload/dist/ocLazyLoad.min.js',
-    './node_modules/ui-router-page-title/page-title.min.js'
+    './node_modules/ui-router-page-title/page-title.min.js',
   ])
-  .pipe(gulp.dest('./public/lib/angular/routing'));
+    .pipe(gulp.dest('./public/lib/angular/routing'));
 
   gulp.src([
-    './node_modules/angular/angular.min.js'
+    './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/popper.js/dist/umd/popper.min.js'
   ])
-  .pipe(gulp.dest('./public/lib/angular'));
+    .pipe(gulp.dest('./public/lib/bootstrap'));
+
+  gulp.src([
+    './node_modules/sweetalert/dist/sweetalert.min.js',
+  ])
+    .pipe(gulp.dest('./public/lib/sweetalert'));
+
 });
 
 gulp.task('reload', () => {
-  gulp.src([paths.views, paths.js, paths.excss])
-  .pipe(connect.reload())
-  .pipe(browserSync.stream());
+  gulp.src([paths.views, paths.styles, paths.js, paths.jsBackEnd, paths.principalJs])
+    .pipe(connect.reload())
+    .pipe(browserSync.stream());
 });
 
 gulp.task('styles', () => {
-  gulp.src(paths.styles)
+  gulp.src(paths.impSass)
   .pipe(sass().on('error', sass.logError))
   .pipe(cssnano())
   .pipe(rename('styles.min.css'))
@@ -66,8 +93,8 @@ gulp.task('styles', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch([paths.views, paths.js, paths.styles], ['reload', 'styles'])
-  .on('change', browserSync.reload);
+  gulp.watch([paths.views, paths.styles, paths.js, paths.principalJs, paths.jsBackEnd], ['reload', 'to-do', 'styles'])
+    .on('change', browserSync.reload);
 });
 
-gulp.task('default', ['connect', 'dependencies', 'reload', 'styles', 'watch']);
+gulp.task('default', ['connect', 'to-do', 'dependencies', 'reload', 'styles', 'watch']);

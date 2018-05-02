@@ -1,16 +1,17 @@
+
 (() => {
   'use strict';
   angular
-  .module('csh-app')
-  .directive('hearderPrincipal', hearderPrincipal);
+  .module('cenfotec-software-house')
+  .directive('navegacionPrincipal', navegacionPrincipal);
+  
+  function navegacionPrincipal(){
 
-  function hearderPrincipal() {
-
-    let header = {
+    const navegacion = {
       templateUrl: '/components/directives/header/header.view.html',
-      restrict: 'EA'
-    }
+      restrict: 'E'
+    };
 
-    return header;
+    return navegacion;
   }
 })();
