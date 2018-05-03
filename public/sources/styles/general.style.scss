@@ -18,6 +18,7 @@ body {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+  
   .active {
     color: $colorPrimary !important;
   }
@@ -38,6 +39,9 @@ body {
   }
   .text-orange {
     color: $backUpOrange;
+  }
+  .carousel-indicators .active {
+    background-color: $colorPrimary !important;
   }
   .cenfotec {
     &:hover {

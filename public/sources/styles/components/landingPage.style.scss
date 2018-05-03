@@ -31,21 +31,73 @@
     span {
       color: $colorPrimary;
     }
-    p{
-      font-size: 1.3em;
+    p {
+      font-size: 1em;
     }
   }
-  #section-2{
-    .description{
+  #nosotros {
+    .description {
       line-height: 1.7em;
     }
+    #estudiantes {
+      background-image: url('./img/banner.png'), $overlay-gradient;
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+    }
+  }
+  .icons {
+    font-size: 5em;
   }
   @media (max-width: 1392px) {
     #banner {
       background-size: cover;
     }
   }
-  .mt-8{
+  .mt-8 {
     margin-top: 10rem !important;
   }
+}
+
+footer {
+  background: $footer;
+  padding: 40px;
+  .copyright {
+    color: white;
+    font-size: 1em;
+    padding-top: 100px;
+    padding-bottom: 0;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+}
+
+/*social-media*/
+
+.social-media {
+  text-align: right;
+  padding-top: 120px;
+  margin-right: 130px;
+}
+
+.icons>h3 {
+  color: white;
+  font-size: 15px;
+  font-family: verdana;
+}
+
+ul.icons {
+  list-style-type: none;
+}
+
+.icons>li {
+  display: inline;
+  padding: 2px;
+}
+
+.icons>li>a>i {
+  font-size: 30px;
+  color: white;
 }

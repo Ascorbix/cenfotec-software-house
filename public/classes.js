@@ -82,8 +82,8 @@ class Client {
 }
 
 class User {
-  constructor(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone){
-    this.rol = prol;
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate){
+    this.role = prole;
     this.firstName = pfirstname;
     this.secondName = psecondname;
     this.firstSurname = pfirstsurname;
@@ -93,6 +93,7 @@ class User {
     this.password = ppassword;
     this.photo = pphoto;
     this.phone = pphone;
+    this.state = pstate;
   };
 
   // TODO Terminar los metodos de la clase Padre
@@ -119,37 +120,40 @@ class User {
 }
 
 class Admin extends User{
-  constructor(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pjob){
-    super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
-    this.job = pjob;
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob){
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+    this.jobPosition = pjob;
   };
 
   // TODO Hacer los metodos del Administrado
 }
 
 class Assistant extends User{
-  constructor(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pjob){
-    super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
-    this.job = pjob;
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob){
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+    this.jobPosition = pjob;
   };
   // TODO Hacer los metodos del Asistente
 }
 
 class Professor extends User{
-  constructor(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pmember){
-    super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
-    this.member = pmember;
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pmember, pspecialty){
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+    this.specialty = pspecialty;
+    this.councilMember = pmember;
   };
   // TODO Hacer los metodos del Profesor
 }
 
 class Student extends User{
-  constructor(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pbirthdate, pcurriculum, pcarrer, pgithubuser){
-    super(prol, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone);
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pbirthdate, pcurriculum, pcarrer, pgithubuser, pwebsite){
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
     this.birthDate = pbirthdate;
     this.curriculum = pcurriculum;
     this.carrer = pcarrer;
     this.githubUser = pgithubuser;
+    this.website = pwebsite;
+    this.rejectReason = ''
   };
   // TODO Hacer los metodos del Estudiante
 }
