@@ -1,8 +1,22 @@
 (() => {
-    'use strict';
-    angular
+  'use strict';
+  angular
     .module('cenfotec-software-house', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload', 'ngAnimate'])
     .value('duScrollDuration', 2000)
-    .value('duScrollOffset', 30);
-
+    .value('duScrollOffset', 30)
+    .constant('AUTH_EVENTS', {
+      loginSuccess: 'auth-login-success',
+      loginFailed: 'auth-login-failed',
+      logoutSuccess: 'auth-logout-success',
+      sessionTimeout: 'auth-session-timeout',
+      notAuthenticated: 'auth-not-authenticated',
+      notAuthorized: 'auth-not-authorized'
+    })
+    .constant('USER_ROLES', {
+      all: '*',
+      admin: 'administrador',
+      assistant: 'asistente',
+      professor: 'profesor',
+      student: 'estudiante'
+    });
 })();

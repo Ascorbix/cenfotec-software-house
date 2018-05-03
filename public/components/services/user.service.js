@@ -10,6 +10,7 @@
     const userAPI = {
       addUser: _addUser,
       getUsers: _getUsers,
+      updateUser: _updateUser,
       changeRequestState: _changeStudentsState
     };
     return userAPI;
@@ -60,8 +61,11 @@
       return response;
     }
 
-    function _getUsers() {}
+    function _getUsers(){}
 
-    function _changeStudentsState(pedituser) {}
+    function _updateUser(pedituser){}
+
+    function _changeStudentsState(pedituser){}
+
   }
 })();

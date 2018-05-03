@@ -3,9 +3,9 @@
     .module('cenfotec-software-house')
     .controller('logInController', logInController);
 
-  logInController.$inject = ['$state'/*, 'loginService'*/];
+  logInController.$inject = ['$state', 'logInService'];
 
-  function logInController($state/*, loginService*/) {
+  function logInController($state, logInService) {
     const vm = this;
 
     vm.datos = {};
@@ -21,18 +21,51 @@
     }
 
     vm.inicioSesion = (datos) => {
-      let success = loginService.logIn(datos);
+      console.log(datos);
+      let success = logInService.logIn(datos);
 
-      if (success == true) {
-        $state.go('main.home');
-      } else {
-        swal({
-          title: "Inicio de sesión fallido",
-          text: "Los datos ingresados son incorrectos",
-          icon: "error",
-          button: "Aceptar",
-        });
+      switch (success) {
+        case "1":
+          swal({
+            title: "Solicitud de registro en revisión",
+            text: "Su solicitud de registro se encuentra en revisión",
+            icon: "warning",
+            button: "Aceptar",
+          });
+          break;
+
+        case "2":
+          swal({
+            title: "Usuario bloqueado, contacte al administrador",
+            text: "Su usuario del Cenfotec Software House ha sido bloquedo",
+            icon: "error",
+            button: "Aceptar",
+          });
+          break;
+
+        case "3":
+          swal({
+            title: "Solicitud de registro rechazada",
+            text: "Su solicitud de registro lamentablemente ha sido rechazada",
+            icon: "error",
+            button: "Aceptar",
+          });
+          break;
+
+        case "4":
+          swal({
+            title: "Credenciales erroneas",
+            text: "Las credenciales que ha ingresado son errones, revise sus datos",
+            icon: "error",
+            button: "Aceptar",
+          });
+          break;
+
+        default:
+          $state.go('main.home');
+          break;
       }
+
     }
   }
 })();

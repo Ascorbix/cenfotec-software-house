@@ -7,6 +7,11 @@ router.param('id', (req, res, next, id) => {
   next();
 });
 
+router.route('/login')
+  .put((req, res, next) => {
+    users.logIn(req, res, next);
+});
+
 router.route('/save_user')
   .post((req, res, next) => {
     users.registerUser(req, res, next);

@@ -18,7 +18,7 @@
     <form class="col-md-7 mx-auto mt-4" ng-submit="vm.inicioSesion(vm.datos)" name="formInicioSesion" novalidate autocomplete="off">
       <div class="form-group">
         <label for="txtcorreo">Correo electrónico</label>
-        <input type="correo" id="txtcorreo" class="form-control" name="campocorreo" ng-model="vm.datos.correo" required>
+        <input type="correo" id="txtcorreo" class="form-control" name="campocorreo" ng-model="vm.datos.email" required>
         <div ng-messages="formInicioSesion.campocorreo.$error">
           <div ng-message="required">
             <small class="form-text text-warning">Este campo es requerido</small>
@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <label for="txtcontrasenna">Contraseña</label>
-        <input type="{{vm.type}}" id="txtcontrasenna" class="form-control" name="campocontrasenna" ng-model="vm.datos.contrasenna"
+        <input type="{{vm.type}}" id="txtcontrasenna" class="form-control" name="campocontrasenna" ng-model="vm.datos.password"
           required>
         <div ng-messages="formInicioSesion.campocontrasenna.$error">
           <div ng-message="required">
