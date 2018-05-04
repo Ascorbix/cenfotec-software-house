@@ -35,8 +35,10 @@ app.use( (req, res, next) => {
 });
 
 const index = require('./index'),
-      users = require('./users/user.routes');
+      users = require('./users/user.routes'),
+      carrers = require('./carrers/carrer.routes');
 
+app.use('/api', carrers);
 app.use('/api', users);
 app.use('/', index);
 
