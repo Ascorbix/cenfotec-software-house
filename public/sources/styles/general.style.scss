@@ -6,14 +6,6 @@ body {
   main {
     max-width: 100%;
   }
-  aside {
-    height: 100vh;
-    a {
-      &:hover {
-        background: $colorPrimary;
-      }
-    }
-  }
   .row .container-fluid .col-md-6 {
     margin-left: 0 !important;
     margin-right: 0 !important;

@@ -27,25 +27,23 @@ var userSchema = new mongoose.Schema({
     curriculum:    {type: String},
     carrer:        {type: String},
     githubUser:    {type: String},
-    websiteUrl:    {type: String},
+    website:    {type: String},
     rejectReason:  {type: String, default: ''}
 });
 
 userSchema.pre('save', function (next) {
-    var user = this;
-    if (!user.isModified('password')) return next();
-  
-    bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
+  var user = this;
+  if (!user.isModified('password')) return next();
+  bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
+    if (err) return next(err);
+    
+    bcrypt.hash(user.password, salt, function (err, hash) {
       if (err) return next(err);
-  
-      bcrypt.hash(user.password, salt, function (err, hash) {
-        if (err) return next(err);
-  
-        user.password = hash;
+      user.password = hash;
         next();
-      });
     });
   });
+});
 
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {

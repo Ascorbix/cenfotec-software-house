@@ -52,6 +52,31 @@
         controller: 'studentRequestController',
         controllerAs: 'vm'
       })
+      .state('main', {
+        url: '/main',
+        templateUrl: './components/main/main.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/main/main.controller.js');
+          }]
+        },
+        controller: 'mainController',
+        controllerAs: 'vm'
+      })
+      .state('main.home', {
+        url: '/home',
+        templateUrl: './components/main/views/home.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Inicio'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/main/main.controller.js');
+          }]
+        },
+        controller: 'mainController',
+        controllerAs: 'vm'
+      })
 
     $urlRouterProvider.otherwise('/');
   }

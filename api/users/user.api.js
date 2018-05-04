@@ -6,12 +6,12 @@ module.exports.registerUser = (req, res, next) => {
 
   switch (newUser.role) {
     case 'student':
-      newUser.birthDate = req.body.birthdate;
-      newUser.curriculum = req.body.careers;
-      newUser.carrer = req.body.justification;
-      newUser.githubUser = req.body.resumeUrl;
-      newUser.websiteUrl = req.body.githubUrl;
-      newUser.rejectReason = req.body.websiteUrl;
+      newUser.birthDate = req.body.birthDate;
+      newUser.curriculum = req.body.curriculum;
+      newUser.carrer = req.body.carrer;
+      newUser.githubUser = req.body.githubUser;
+      newUser.website = req.body.website;
+      newUser.rejectReason = req.body.rejectReason;
       break;
     case 'professor':
       newUser.specialty = req.body.specialty;
@@ -21,6 +21,8 @@ module.exports.registerUser = (req, res, next) => {
       newUser.jobPosition = req.body.jobPosition;
       break;
   }
+
+  console.log(newUser);
 
   newUser.save((err) => {
     if (err) {

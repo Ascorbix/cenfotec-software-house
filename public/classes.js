@@ -96,7 +96,30 @@ class User {
     this.state = pstate;
   };
 
-  // TODO Terminar los metodos de la clase Padre
+  // Getters
+  getRole(){
+    return this.role;
+  }
+
+  getFirstName(){
+    return this.firstName;
+  }
+
+  getSecondName(){
+    return this.secondName;
+  }
+
+  getFirstSurname(){
+    return this.firstName;
+  }
+
+  getSecondSurname(){
+    return this.secondSurname;
+  }
+
+  getId(){
+    return this.id;
+  }
 
   getEmail(){
     return this.email;
@@ -110,12 +133,53 @@ class User {
     return this.photo;
   }
 
-  getId(){
-    return this.id;
+  getPhone(){
+    return this.phone;
   }
 
-  setPhoto(pnphoto){
-    this.photo = pnphoto;
+  getState(){
+    return this.state;
+  }
+
+  // Setter
+  setRole(pnewrole){
+    this.role = pnewrole;
+  }
+
+  setFirstName(pnewfirstname){
+    this.firstName = pnewfirstname;
+  }
+
+  setSecondName(pnewsecondname){
+    this.secondName = pnewsecondname;
+  }
+
+  setFirstSurname(pnewfirstsurname){
+    this.firstName = pnewfirstsurname;
+  }
+
+  setSecondSurname(pnewsecondsurname){
+    this.secondSurname = pnewsecondsurname;
+  }
+
+  setId(pnewid){
+    this.id = pnewid;
+  }
+
+  setPassword(pnewpassword){
+    this.password = pnewpassword;
+  }
+
+  setPhono(pnewphoto){
+    this.photo = pnewphoto;
+  }
+
+  setPhone(pnewphone){
+    this.phone = pnewphone;
+  }
+
+  setState(pnewstate){
+    this.state = pnewstate;
   }
 }
 
@@ -125,7 +189,15 @@ class Admin extends User{
     this.jobPosition = pjob;
   };
 
-  // TODO Hacer los metodos del Administrado
+  // Getters
+  getJobPosition() {
+    return this.jobPosition;
+  }
+
+  // Setters
+  setJobPosition(pnewjobposition) {
+    this.jobPosition = pnewjobposition;
+  }
 }
 
 class Assistant extends User{
@@ -133,7 +205,16 @@ class Assistant extends User{
     super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
     this.jobPosition = pjob;
   };
-  // TODO Hacer los metodos del Asistente
+
+  // Getters
+  getJobPosition() {
+    return this.jobPosition;
+  }
+
+  // Setters
+  setJobPosition(pnewjobposition) {
+    this.jobPosition = pnewjobposition;
+  }
 }
 
 class Professor extends User{
@@ -142,7 +223,17 @@ class Professor extends User{
     this.specialty = pspecialty;
     this.councilMember = pmember;
   };
-  // TODO Hacer los metodos del Profesor
+
+  // Getters
+  getSpecialty(){
+    return this.specialty;
+  }
+
+  getCouncilMember(){
+    return this.councilMember;
+  }
+
+  // TODO Hacer los sets del Profesor
 }
 
 class Student extends User{
@@ -155,7 +246,32 @@ class Student extends User{
     this.website = pwebsite;
     this.rejectReason = ''
   };
-  // TODO Hacer los metodos del Estudiante
+
+  // Getters
+  getBirthDate(){
+    return this.birthDate;
+  }
+
+  getCurriculum(){
+    return this.curriculum;
+  }
+
+  getCarrer(){
+    return this.carrer;
+  }
+
+  getGithubUser(){
+    return this.githubUser;
+  }
+
+  getWebSite(){
+    return this.website;
+  }
+
+  getRejecReason(){
+    return this.rejectReason;
+  }
+  // TODO Hacer los sets del Estudiante
 }
 
 
