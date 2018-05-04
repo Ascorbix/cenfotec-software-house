@@ -1,7 +1,10 @@
 (() => {
   'use strict';
   angular
-    .module('cenfotec-software-house', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload', 'ngAnimate'])
+    .module('cenfotec-software-house', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload', 'ngAnimate', 'angular-filepicker'])
+    .config((filepickerProvider) => {
+      filepickerProvider.setKey('A0oZduRlQRGs9LSqqlc2Nz');
+    })
     .value('duScrollDuration', 2000)
     .value('duScrollOffset', 30)
     .constant('AUTH_EVENTS', {

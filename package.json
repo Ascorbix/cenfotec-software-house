@@ -31,6 +31,7 @@
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
     "angular-animate": "^1.6.9",
+    "angular-filepicker": "^1.1.4",
     "angular-messages": "^1.6.9",
     "angular-scroll": "^1.0.2",
     "bootstrap": "^4.1.0",

@@ -53,7 +53,8 @@ gulp.task('dependencies', () => {
     './node_modules/ng-file-upload/dist/ng-file-upload.min.js',
     './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
     './node_modules/ngmap/build/scripts/ng-map.min.js',
-    './node_modules/angular-animate/angular-animate.min.js'
+    './node_modules/angular-animate/angular-animate.min.js',
+    './node_modules/angular-filepicker/dist/angular_filepicker.min.js'
   ])
     .pipe(gulp.dest('./public/lib/angular/dependencies'));
 

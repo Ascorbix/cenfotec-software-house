@@ -13,7 +13,7 @@
 
 
     if (!userAuth) {
-      $state.go('inicioSesion');
+      $state.go('iniciarSesion');
     }
 
     vm.user = userAuth;

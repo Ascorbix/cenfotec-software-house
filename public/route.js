@@ -80,6 +80,36 @@
         controllerAs: 'vm'
       })
 
+      .state('main.verPerfil', {
+        url: '/profile',
+        templateUrl: './components/users/profile/profile.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Inicio'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/users/profile/profile.controller.js');
+          }]
+        },
+        controller: 'profileController',
+        controllerAs: 'vm'
+      })
+
+      .state('main.registroCarreras', {
+        url: '/registerCarrer',
+        templateUrl: './components/carrers/register/register.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Inicio'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/carrers/register/register.controller.js');
+          }]
+        },
+        controller: 'carrerRegisterController',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   }
 })();

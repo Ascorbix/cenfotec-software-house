@@ -1,5 +1,5 @@
 const userSchema = require('./user.model'),
-      bcrypt = require('bcrypt');
+  bcrypt = require('bcrypt');
 
 module.exports.registerUser = (req, res, next) => {
   var newUser = Object.assign(new userSchema(), req.body);
@@ -21,8 +21,6 @@ module.exports.registerUser = (req, res, next) => {
       newUser.jobPosition = req.body.jobPosition;
       break;
   }
-
-  console.log(newUser);
 
   newUser.save((err) => {
     if (err) {
@@ -65,7 +63,7 @@ module.exports.logIn = (req, res, next) => {
             case "active":
             case "inactive":
               res.json({
-                "email" : user.email,
+                "email": user.email,
                 "role": user.role,
                 "condition": "0"
               });
