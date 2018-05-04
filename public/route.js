@@ -52,6 +52,7 @@
         controller: 'studentRequestController',
         controllerAs: 'vm'
       })
+
       .state('main', {
         url: '/main',
         templateUrl: './components/main/main.view.html',
@@ -63,6 +64,7 @@
         controller: 'mainController',
         controllerAs: 'vm'
       })
+
       .state('main.home', {
         url: '/home',
         templateUrl: './components/main/views/home.view.html',
